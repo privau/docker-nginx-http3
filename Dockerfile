@@ -1,8 +1,6 @@
 FROM debian:bookworm-slim
-RUN apt-get install wget -y
-
 # set version
-RUN wget https://github.com/ononoki1/nginx-http3/releases/download/v4.4.3/nginx.deb
+RUN curl https://github.com/ononoki1/nginx-http3/releases/download/v4.4.3/nginx.deb
 
 RUN dpkg -i nginx.deb
 
