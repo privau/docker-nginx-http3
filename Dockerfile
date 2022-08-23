@@ -2,7 +2,7 @@ FROM debian:bookworm-slim
 
 COPY ./nginx.deb /nginx/
 
-RUN apt-get update && apt-get install -y nginx \
+RUN apt-get update && apt-get install -y nginx apt-utils \
   && apt remove nginx -y
 
 RUN dpkg -i /nginx/nginx.deb \
