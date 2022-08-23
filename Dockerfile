@@ -2,8 +2,7 @@ FROM debian:bookworm-slim
 
 COPY ./nginx.deb /nginx/
 
-RUN apt-get update && apt-get install -y nginx apt-utils libmaxminddb0 \
-  && apt remove nginx nginx-common -y
+RUN apt-get update && apt-get install -y libmaxminddb0
 
 RUN dpkg -i /nginx/nginx.deb \
   && rm -rf /nginx/*.deb \
