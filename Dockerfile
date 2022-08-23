@@ -1,4 +1,4 @@
-FROM bookworm-slim
+FROM debian:bookworm-slim
 
 # set version
 RUN wget https://github.com/ononoki1/nginx-http3/releases/download/v4.4.3/nginx.deb
