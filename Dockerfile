@@ -1,4 +1,4 @@
-FROM debian:bookworm-slim
+FROM debian:bookworm
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
   expect curl ca-certificates iproute2 wget jq iptables \
