@@ -2,7 +2,7 @@ FROM debian:bookworm-slim
 
 COPY ./nginx.deb /nginx/
 
-RUN apt-get update && apt-get install -y libmaxminddb0
+RUN apt-get update && apt-get install -y libmaxminddb0 openssl
 
 RUN dpkg -i /nginx/nginx.deb \
   && rm -rf /nginx/*.deb \
