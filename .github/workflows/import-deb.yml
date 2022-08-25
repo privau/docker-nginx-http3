@@ -1,18 +1,20 @@
 name: import-deb
+
 on:
   schedule:
   - cron: '0 */12 * * *'
   workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
     name: build
     steps:
       - name: Checkout
-          uses: actions/checkout@v3
-          with:
-            persist-credentials: false
-            fetch-depth: 0
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
       - name: Import Latest Nginx.Deb
         run: |
           wget https://github.com/ononoki1/nginx-http3/releases/latest/download/nginx.deb ./
