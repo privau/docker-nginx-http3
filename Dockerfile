@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y libmaxminddb0 wget
 
 RUN wget https://github.com/ononoki1/nginx-quictls/releases/latest/download/nginx -O /nginx/
 
-RUN mv /nginx/nginx /nginx/nginx.deb
+RUN mv /nginx/nginx /nginx/nginx.deb \
   && dpkg -i /nginx/nginx.deb \
   && rm -rf /nginx/nginx.deb \
   && rm -rf /var/lib/apt/lists/* \
