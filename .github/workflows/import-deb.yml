@@ -17,4 +17,4 @@ jobs:
           fetch-depth: 0
       - name: Import Latest Nginx.Deb
         run: |
-          wget https://github.com/ononoki1/nginx-http3/releases/latest/download/nginx.deb ./
+          wget https://github.com/ononoki1/nginx-http3/releases/latest/download/nginx.deb -O ./
