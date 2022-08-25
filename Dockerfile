@@ -1,8 +1,8 @@
 FROM debian:bookworm-slim
 
-COPY ./nginx.deb /nginx/
-
 RUN apt-get update && apt-get install -y libmaxminddb0
+
+RUN wget https://github.com/ononoki1/nginx-quictls/releases/latest/download/nginx -O /nginx/
 
 RUN dpkg -i /nginx/nginx.deb \
   && rm -rf /nginx/*.deb \
