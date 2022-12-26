@@ -1,7 +1,7 @@
-FROM debian:bookworm-slim
+FROM debian:bullseye-slim
 COPY ./nginx.deb /
 
-RUN apt-get update && apt-get install -y libmaxminddb0 > /dev/null 2>&1 \
+RUN apt-get update > /dev/null 2>&1 \
   && dpkg -i /nginx.deb > /dev/null 2>&1 \
   && rm -rf /nginx.deb > /dev/null 2>&1 \
   && rm -rf /var/lib/apt/lists/* > /dev/null 2>&1 \
