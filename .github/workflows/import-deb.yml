@@ -17,7 +17,7 @@ jobs:
           fetch-depth: 0
       - name: Import Latest nginx.deb
         run: |
-          wget https://github.com/vojkovic/nginx-http3/releases/latest/download/nginx.deb -O ./nginx.deb && git add nginx.deb
+          wget https://github.com/ononoki1/nginx-http3/releases/latest/download/nginx.deb -O ./nginx.deb && git add nginx.deb
       - name: Commit files
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
