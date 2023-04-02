@@ -5,11 +5,10 @@ RUN echo deb http://deb.debian.org/debian bullseye-backports main >> /etc/apt/so
 
 RUN apt update && apt install --allow-change-held-packages --allow-downgrades --allow-remove-essential \
   -o Dpkg::Options::=--force-confdef -o Dpkg::Options::=--force-confold -fy \
-  cmake curl git libmaxminddb-dev mercurial ninja-build rsync wget zlib1g-dev \
-  > /dev/null 2>&1
+  cmake curl git libmaxminddb-dev mercurial ninja-build rsync wget zlib1g-dev
   apt install --allow-change-held-packages --allow-downgrades --allow-remove-essential \
   -o Dpkg::Options::=--force-confdef -o Dpkg::Options::=--force-confold -fy \
-  -t bullseye-backports golang > /dev/null 2>&1 \
+  -t bullseye-backports golang \
   && dpkg -i /nginx.deb \
   && rm -rf /nginx.deb \
   && rm -rf /var/lib/apt/lists/* \
